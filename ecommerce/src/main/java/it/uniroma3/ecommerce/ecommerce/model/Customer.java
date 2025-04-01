@@ -1,4 +1,4 @@
-package it.uniroma3.ecommerce.ecommerce;
+package it.uniroma3.ecommerce.ecommerce.model;
 
 import jakarta.persistence.GeneratedValue;
 
@@ -6,8 +6,12 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
@@ -17,6 +21,9 @@ import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+
 
 @Entity
 @Data
@@ -35,8 +42,9 @@ public class Customer {
     private String phoneNumber;
     private LocalDate dateOfBirth;
     private LocalDateTime registrationDate;
-
-    @OneToOne
+   
+    @ToString.Exclude
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     @JoinColumn(name = "adress_id")
     private Adress adress;
     

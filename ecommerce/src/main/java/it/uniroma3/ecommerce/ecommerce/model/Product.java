@@ -1,4 +1,4 @@
-package it.uniroma3.ecommerce.ecommerce;
+package it.uniroma3.ecommerce.ecommerce.model;
 
 import java.util.List;
 import jakarta.persistence.Column;

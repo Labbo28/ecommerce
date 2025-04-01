@@ -1,4 +1,4 @@
-package it.uniroma3.ecommerce.ecommerce;
+package it.uniroma3.ecommerce.ecommerce.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
